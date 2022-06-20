@@ -2,12 +2,11 @@ relates to issue #
 
 ## Description
 
-<!--- Describe your changes in detail -->
+
 
 ## How has this been tested?
 
-<!--- Please describe in detail how you tested your changes. -->
-<!--- your change affects other areas of the code, etc. -->
+
 
 ## Type of change
 
