@@ -8,6 +8,11 @@ labels: bug
 
 <br />
 
+### Steps to reproduce
+*  Step
+
+<br />
+
 ### Expected behavior
 
 <br />
