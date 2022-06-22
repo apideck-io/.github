@@ -4,13 +4,14 @@ about: Something is not working as it should
 labels: bug
 ---
 
-#### Description
+### Description
 
+<br />
 
-#### Expected behavior
+### Expected behavior
 
+<br />
 
-
-#### Context
+### Context (links, screenshots, slack thread etc)
 
 
