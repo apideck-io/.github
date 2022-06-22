@@ -3,10 +3,13 @@ name: "🎁 Other"
 about: A new feature, or anything else
 ---
 
-#### Description
+## Description
 
+<br />
 
+## Context
 
-#### Context
+<br />
 
-
+### Task/Effort Breakdown
+* [ ] Effort/task
