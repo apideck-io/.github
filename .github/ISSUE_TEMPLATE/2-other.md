@@ -11,5 +11,5 @@ about: A new feature, or anything else
 
 <br />
 
-### Effort Breakdown
-* [ ] Effort or task required for success
+### Effort Breakdown 
+* [ ] Effort or task required
