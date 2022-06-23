@@ -6,7 +6,12 @@ relates to issue #
 
 ## How has this been tested?
 
-
+- [ ] Unit tests
+- [ ] Portman
+- [ ] Local API
+- [ ] Cypress
+- [ ] Click Tests
+- [ ] YOLO
 
 ## Type of change
 
