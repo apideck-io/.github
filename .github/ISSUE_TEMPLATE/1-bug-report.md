@@ -6,16 +6,16 @@ labels: bug
 
 ### Description
 
-<br />
+
 
 ### Steps to reproduce
 *  Step
 
-<br />
+
 
 ### Expected behavior
 
-<br />
+
 
 ### Context (links, screenshots, slack thread etc)
 
