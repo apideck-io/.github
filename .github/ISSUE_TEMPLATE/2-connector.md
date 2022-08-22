@@ -37,6 +37,7 @@ labels: connectors
 - [ ] In 1Password
 - [ ] Google Login
 - [ ] Waiting Access Approval
+- [ ] Customer Access Required
 - [ ] Not possible
 
 ### Acceptance Criteria
