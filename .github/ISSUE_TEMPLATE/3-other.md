@@ -13,3 +13,7 @@ about: A new feature, or anything else
 
 ### Effort Breakdown 
 * [ ] Effort or task required
+
+
+### Acceptance Criteria
+* [ ] 

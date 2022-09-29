@@ -44,3 +44,9 @@ labels: connectors
 
 - [ ] Read-only
 - [ ] Read-write
+- [ ] Connections configurable via Vault
+- [ ] Logs in Platform admin
+- [ ] Proxy calls supported
+- [ ] Updated seed
+- [ ] Updated connector research
+- [ ] Set default scopes (if applicable for their Auth)
