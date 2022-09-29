@@ -1,6 +1,6 @@
 ---
 name: "⛑ Support case"
-about: Investigate on a customer question/issue
+about: Follow-up a customer question/issue
 labels: Support
 ---
 
