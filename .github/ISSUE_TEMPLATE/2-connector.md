@@ -10,6 +10,7 @@ labels: connectors
 
 - [ ] accounting
 - [ ] ats
+- [ ] calendar
 - [ ] crm
 - [ ] csp
 - [ ] customer-support
