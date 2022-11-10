@@ -24,6 +24,7 @@ labels: connectors
 - [ ] lead
 - [ ] payroll
 - [ ] pos
+- [ ] project-management
 - [ ] script
 - [ ] sms
 - [ ] spreadsheet
