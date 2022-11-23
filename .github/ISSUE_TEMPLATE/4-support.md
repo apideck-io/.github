@@ -8,7 +8,6 @@ labels: Support
 
 
 ### Channel
-Intercom Slack Email conversation: ENTER-LINK-TO-CHANNEL
 
 
 ### Customer contacts
