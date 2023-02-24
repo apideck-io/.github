@@ -11,6 +11,7 @@ relates to issue #
 - [ ] Local API
 - [ ] Cypress
 - [ ] Click Tests
+- [ ] yarn connector:test
 - [ ] YOLO
 
 ## Type of change
