@@ -1,8 +1,7 @@
 relates to issue #
 
 ## Description
-
-
+copilot:summary
 
 ## How has this been tested?
 
@@ -23,3 +22,6 @@ relates to issue #
 - [ ] SDK (fix or feature related to the SDKs)
 - [ ] New connector (Adds a new Unify connector)
 - [ ] Enhanced connector (Extended the existing Unify connector with a new operation/resource/field)
+
+## Walkthrough
+copilot:walkthrough
