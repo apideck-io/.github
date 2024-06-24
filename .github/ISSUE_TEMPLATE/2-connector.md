@@ -46,6 +46,7 @@ labels: connectors
 
 - [ ] Read-only
 - [ ] Read-write
+- [ ] Webhook support
 - [ ] Connections configurable via Vault
 - [ ] Logs in Platform admin
 - [ ] Proxy calls supported
