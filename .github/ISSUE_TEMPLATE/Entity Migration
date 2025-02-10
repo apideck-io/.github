@@ -1,0 +1,118 @@
+## Migration Checklist
+
+### Infrastructure Changes
+
+#### 1. Entity & DBItem Interface
+
+- [ ] Define `[Entity]DBItem` interface next to domain Entity
+  - Location: `src/modules/[entity]/domain/[Entity].ts`
+  - Must include all DynamoDB specific fields (pk, sk, etc.)
+  - [ ] Remove any interfaces/types from infra layer
+
+#### 2. Create Mapper
+
+- [ ] Create mapper file at `src/infra/dynamodb/[Entity]/mappers/[Entity]Mapper.ts`
+  - [ ] Implement `toDBItem` method (domain Entity → [Entity]DBItem)
+  - [ ] Implement `toDomain` method ([Entity]DBItem → Entity)
+  - [ ] Add unit tests for mapper
+  - [ ] Ensure mapper handles all type transformations
+
+#### 3. Test Factories
+
+- [ ] Create/update factory in `__test__/testUtils/factories/[entity].ts`
+  - [ ] Add `[Entity]DBItemFactory` (generates valid [Entity]DBItem)
+  - [ ] Add `[entity]DomainFactory` (generates valid domain Entity)
+
+#### 4. Repository Implementation
+
+- [ ] Update/create repository at `src/infra/dynamodb/[entity]/[Entity]Repo.ts`
+  - [ ] Implement RepoPort interface
+  - [ ] For each method:
+    - [ ] Return `TE.TaskEither<AppError, Entity>` or `TE.TaskEither<AppError, Entity[]>`
+    - [ ] Add Bugsnag error logging for infrastructure errors
+    - [ ] Use mapper's toDomain in the final pipe
+    - [ ] Add proper error handling
+    - [ ] Remove any direct type casting
+  - [ ] Add comprehensive unit tests
+    - [ ] Test happy paths
+    - [ ] Test error scenarios
+    - [ ] Test edge cases
+  - [ ] Ensure all methods are individually exported
+  - [ ] Remove any class-based implementations
+
+### Domain & Module Structure
+
+#### 1. Module Directory Structure
+
+- [ ] Ensure module directory follows standard structure:
+  ```
+  src/modules/[entity]/
+  ├── application/     # Contains use cases and controllers
+  ├── domain/         # Contains entity definitions, ports, and domain logic
+  └── dto/
+      ├── request/    # Contains DTOs for API requests
+      └── response/   # Contains DTOs for API responses
+  ```
+
+#### 2. Domain Structure
+
+- [ ] Ensure domain folder has required structure:
+  ```
+  src/modules/[entity]/domain/
+  ├── [Entity].ts              # Entity definition and types
+  ├── factory/                 # Factory methods for creating entities
+  │   └── [Entity]Factory.ts
+  ├── mapper/                  # Mappers for DTO transformations
+  │   └── [Entity]Mapper.ts
+  └── ports/                   # Repository interfaces
+      └── [Entity]RepoPort.ts
+  ```
+
+#### 3. Repository Port
+
+- [ ] Define repository port interface at `src/modules/[entity]/domain/ports/[Entity]RepoPort.ts`
+  - [ ] Define all method signatures using TaskEither
+  - [ ] Use proper error types (AppError)
+  - [ ] Export all methods individually
+  - [ ] Ensure all method parameters are properly typed
+
+#### 4. Use Case Updates
+
+- [ ] Update all use cases using this repository
+  - [ ] Update imports to use new repo methods
+  - [ ] Ensure proper error handling
+  - [ ] Update tests to use new factories
+  - [ ] Implement dependency injection
+    - [ ] Define constructor with individual repository methods as dependencies
+    - [ ] Create index.ts file to compose use case with repository implementations
+      - [ ] Import required repository methods
+      - [ ] Instantiate use case with repository methods
+      - [ ] Export composed use case instance
+    - [ ] Update tests to use mock repository methods
+    - [ ] Export controller alongside composed use case instance
+
+## Validation Checklist
+
+- [ ] All TypeScript types are properly defined (no any)
+- [ ] All methods properly handle and log errors
+- [ ] Unit tests cover all scenarios
+- [ ] No direct DynamoDB access outside repository
+- [ ] All exports are named (no default exports)
+
+## Notes
+
+- Copy this template for each entity migration
+- Update the template with entity-specific requirements as needed
+- Document any special cases or considerations in the entity's migration issue
+
+## Migration Notes
+
+### Key Principles
+
+- No interfaces/types in infra layer
+- No direct type casting
+- All methods individually exported (no classes)
+- Proper error handling with TaskEither
+- Clean separation between domain and infrastructure
+- All type transformations handled by mappers
+- Dependency injection for all use cases
